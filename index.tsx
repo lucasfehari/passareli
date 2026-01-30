@@ -13,7 +13,7 @@ declare global {
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   // Refs for animations
   const heroRef = useRef(null);
   const textRef = useRef(null);
@@ -38,7 +38,7 @@ const App = () => {
 
       // Hero Animation
       const tl = window.gsap.timeline();
-      tl.fromTo(textRef.current.children, 
+      tl.fromTo(textRef.current.children,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 }
       );
@@ -67,7 +67,7 @@ const App = () => {
           start: "top bottom",
           end: "bottom top",
           scrub: true
-        }, 
+        },
       });
 
       // Stats Counter Animation
@@ -141,7 +141,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-charcoal-dark font-sans selection:bg-gold-500 selection:text-white overflow-x-hidden">
-      
+
       {/* Top Bar - Desktop Only */}
       <div className={`fixed top-0 left-0 w-full z-[60] bg-black border-b border-white/10 transition-transform duration-500 ease-in-out ${scrolled ? '-translate-y-full' : 'translate-y-0'} hidden md:block h-12`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 h-full flex justify-between items-center text-xs tracking-wide">
@@ -156,25 +156,23 @@ const App = () => {
             </div>
           </div>
           <div className="flex items-center gap-4 text-gray-400">
-             <span className="text-gray-600">|</span>
-             <a href="#" className="hover:text-gold-400 transition-colors"><Instagram size={16}/></a>
-             <a href="#" className="hover:text-gold-400 transition-colors"><Linkedin size={16}/></a>
-             <a href="#" className="hover:text-gold-400 transition-colors"><Facebook size={16}/></a>
+            <span className="text-gray-600">|</span>
+            <a href="#" className="hover:text-gold-400 transition-colors"><Instagram size={16} /></a>
+            <a href="#" className="hover:text-gold-400 transition-colors"><Linkedin size={16} /></a>
+            <a href="#" className="hover:text-gold-400 transition-colors"><Facebook size={16} /></a>
           </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav 
-        className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${
-          scrolled 
-            ? 'top-0 bg-charcoal/95 backdrop-blur-md border-gold-500/20 py-4 shadow-2xl' 
-            : 'top-0 md:top-12 bg-transparent border-transparent py-6'
-        }`}
+      <nav
+        className={`fixed w-full z-50 transition-all duration-500 ease-in-out border-b ${scrolled
+          ? 'top-0 bg-charcoal/95 backdrop-blur-md border-gold-500/20 py-4 shadow-2xl'
+          : 'top-0 md:top-12 bg-transparent border-transparent py-6'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Scale className="text-gold-400 w-8 h-8" strokeWidth={1.5} />
             <span className="font-serif text-2xl tracking-widest text-white font-semibold">
               PASSARELLI <span className="text-gold-400 font-light">ADVOCACIA</span>
             </span>
@@ -183,8 +181,8 @@ const App = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className="text-sm uppercase tracking-widest text-gray-300 hover:text-gold-400 transition-colors duration-300 relative group"
               >
@@ -206,9 +204,9 @@ const App = () => {
         {/* Mobile Menu Overlay */}
         {menuOpen && (
           <div className="absolute top-full left-0 w-full bg-charcoal-dark border-b border-gold-500/20 p-6 flex flex-col gap-4 md:hidden animate-fade-in-down z-50 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
-             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className="text-center text-gray-300 hover:text-gold-400 uppercase tracking-widest py-3 border-b border-white/5 last:border-0"
@@ -216,18 +214,18 @@ const App = () => {
                 {link.name}
               </a>
             ))}
-            
+
             {/* Mobile Contact & Socials Info */}
             <div className="mt-4 pt-4 border-t border-white/10 flex flex-col items-center gap-4 text-gray-400">
-               <div className="flex items-center gap-2 text-sm">
-                  <Clock size={14} className="text-gold-500" />
-                  <span>Seg - Sex: 09h às 18h</span>
-               </div>
-               <div className="flex gap-6 mt-2">
-                 <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Instagram size={18}/></a>
-                 <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Linkedin size={18}/></a>
-                 <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Facebook size={18}/></a>
-               </div>
+              <div className="flex items-center gap-2 text-sm">
+                <Clock size={14} className="text-gold-500" />
+                <span>Seg - Sex: 09h às 18h</span>
+              </div>
+              <div className="flex gap-6 mt-2">
+                <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Instagram size={18} /></a>
+                <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Linkedin size={18} /></a>
+                <a href="#" className="p-2 border border-white/10 rounded-full hover:border-gold-500 hover:text-gold-500 transition-colors"><Facebook size={18} /></a>
+              </div>
             </div>
           </div>
         )}
@@ -239,9 +237,9 @@ const App = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/90 via-charcoal-dark/60 to-charcoal-dark z-10"></div>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop" 
-            alt="Law Office Interior" 
+          <img
+            src="src/images/02.jpg"
+            alt="Law Office Interior"
             className="w-full h-[120%] -mt-[10%] object-cover opacity-60 hero-bg"
           />
         </div>
@@ -251,7 +249,7 @@ const App = () => {
             <div className="h-[1px] w-24 bg-gold-500 mb-2 mx-auto"></div>
             <p className="text-gold-400 uppercase tracking-[0.3em] text-xs md:text-sm font-medium">Tradição & Modernidade</p>
           </div>
-          
+
           <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-medium tracking-tight mb-8 leading-tight">
             PASSARELLI <br />
             <span className="text-gold-gradient font-semibold">ADVOCACIA</span>
@@ -299,14 +297,14 @@ const App = () => {
       <section id="sobre" ref={aboutRef} className="py-24 bg-charcoal-dark relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            
+
             {/* Image Side */}
             <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] overflow-hidden rounded-sm border border-white/10 group">
               <div className="absolute inset-0 bg-gold-500/10 z-10 mix-blend-overlay"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" 
-                alt="Meeting Room" 
-                className="about-image w-full h-[120%] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              <img
+                src="/src/images/01.png"
+                alt="Meeting Room"
+                className="about-image w-full h-auto object-cover grayscale"
               />
               <div className="absolute bottom-8 left-8 z-20 bg-charcoal/90 backdrop-blur-md p-6 border-l-4 border-gold-500">
                 <p className="text-gold-400 font-serif text-2xl mb-1">Fundado em 2005</p>
@@ -317,43 +315,43 @@ const App = () => {
             {/* Text Side */}
             <div className="w-full lg:w-1/2">
               <div className="mb-8">
-                 <span className="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold">Sobre Nós</span>
-                 <h2 className="font-serif text-3xl md:text-5xl text-white mt-4 mb-6 leading-tight">
-                   Defendendo seus direitos com <span className="text-gold-gradient">maestria</span>.
-                 </h2>
-                 <p className="text-gray-400 leading-relaxed font-light text-lg mb-6">
-                   A Passarelli Advocacia se destaca não apenas pelo conhecimento técnico, mas pela compreensão profunda das necessidades de cada cliente. Combinamos a tradição do direito com estratégias modernas para entregar resultados.
-                 </p>
-                 <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
-                      <p className="text-gray-300 text-sm">Atendimento personalizado e exclusivo para cada demanda.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
-                      <p className="text-gray-300 text-sm">Equipe multidisciplinar e altamente qualificada.</p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
-                      <p className="text-gray-300 text-sm">Transparência total em todas as etapas processuais.</p>
-                    </div>
-                 </div>
+                <span className="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold">Sobre Nós</span>
+                <h2 className="font-serif text-3xl md:text-5xl text-white mt-4 mb-6 leading-tight">
+                  Defendendo seus direitos com <span className="text-gold-gradient">maestria</span>.
+                </h2>
+                <p className="text-gray-400 leading-relaxed font-light text-lg mb-6">
+                  A Passarelli Advocacia se destaca não apenas pelo conhecimento técnico, mas pela compreensão profunda das necessidades de cada cliente. Combinamos a tradição do direito com estratégias modernas para entregar resultados.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
+                    <p className="text-gray-300 text-sm">Atendimento personalizado e exclusivo para cada demanda.</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
+                    <p className="text-gray-300 text-sm">Equipe multidisciplinar e altamente qualificada.</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="text-gold-500 mt-1 flex-shrink-0" size={20} />
+                    <p className="text-gray-300 text-sm">Transparência total em todas as etapas processuais.</p>
+                  </div>
+                </div>
               </div>
-              
+
               {/* Stats Row */}
               <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-8 mt-8">
-                 <div>
-                   <h3 className="text-3xl md:text-4xl text-white font-serif mb-2"><span className="stat-number" data-target="20">0</span>+</h3>
-                   <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Anos de Atuação</p>
-                 </div>
-                 <div>
-                   <h3 className="text-3xl md:text-4xl text-white font-serif mb-2"><span className="stat-number" data-target="1500">0</span>+</h3>
-                   <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Casos Resolvidos</p>
-                 </div>
-                 <div>
-                   <h3 className="text-3xl md:text-4xl text-white font-serif mb-2">98%</h3>
-                   <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Satisfação</p>
-                 </div>
+                <div>
+                  <h3 className="text-3xl md:text-4xl text-white font-serif mb-2"><span className="stat-number" data-target="20">0</span>+</h3>
+                  <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Anos de Atuação</p>
+                </div>
+                <div>
+                  <h3 className="text-3xl md:text-4xl text-white font-serif mb-2"><span className="stat-number" data-target="1500">0</span>+</h3>
+                  <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Casos Resolvidos</p>
+                </div>
+                <div>
+                  <h3 className="text-3xl md:text-4xl text-white font-serif mb-2">98%</h3>
+                  <p className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest">Satisfação</p>
+                </div>
               </div>
             </div>
 
@@ -365,7 +363,7 @@ const App = () => {
       <section ref={valuesRef} className="py-24 bg-charcoal relative">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-500/20 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="text-center mb-20">
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">Nossos Valores</h2>
             <div className="w-16 h-[2px] bg-gold-500 mx-auto"></div>
@@ -414,7 +412,7 @@ const App = () => {
       {/* Areas of Practice */}
       <section id="atuacao" ref={areasRef} className="py-24 bg-charcoal-dark relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <span className="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold">Expertise</span>
@@ -424,7 +422,7 @@ const App = () => {
               </p>
             </div>
             <button className="hidden md:flex items-center gap-2 text-gold-400 hover:text-white transition-colors uppercase tracking-widest text-xs font-semibold group">
-              Ver Todas as Áreas <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
+              Ver Todas as Áreas <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -436,7 +434,7 @@ const App = () => {
             <AreaCard title="Direito Administrativo" description="Normas que regem órgãos e atividades públicas." icon={<Shield size={24} />} />
             <AreaCard title="Planejamento Sucessório" description="Estruturas para partilha do patrimônio familiar." icon={<FileText size={24} />} />
           </div>
-          
+
           <div className="mt-12 text-center md:hidden">
             <button className="inline-flex items-center gap-2 px-6 py-3 border border-gold-500/30 text-gold-400 rounded-sm hover:bg-gold-500/10 transition-colors uppercase text-sm tracking-widest">
               Ver Todas as Áreas
@@ -458,7 +456,7 @@ const App = () => {
         <div className="w-full relative">
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-charcoal to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-charcoal to-transparent z-10 pointer-events-none"></div>
-          
+
           <div className="overflow-hidden flex">
             <div ref={testimonialSliderRef} className="flex gap-8 w-max pl-6 pr-6">
               {/* Duplicate array for infinite loop */}
@@ -485,7 +483,7 @@ const App = () => {
       <section id="contato" className="py-24 bg-charcoal relative border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Contact Info */}
             <div>
               <h2 className="font-serif text-4xl text-white mb-6">Entre em Contato</h2>
@@ -564,7 +562,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-1">
-               <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-2 mb-6">
                 <Scale className="text-gold-400 w-6 h-6" />
                 <span className="font-serif text-xl tracking-widest text-white font-semibold">
                   PASSARELLI
@@ -574,7 +572,7 @@ const App = () => {
                 Excelência jurídica e compromisso ético para defender seus interesses com a máxima dedicação.
               </p>
             </div>
-            
+
             <div className="col-span-1">
               <h4 className="text-white font-serif mb-6">Links Rápidos</h4>
               <ul className="space-y-4 text-gray-400 text-sm">
@@ -585,14 +583,14 @@ const App = () => {
               </ul>
             </div>
 
-             <div className="col-span-1 md:col-span-2">
+            <div className="col-span-1 md:col-span-2">
               <h4 className="text-white font-serif mb-6">Newsletter</h4>
               <div className="flex flex-col gap-4">
                 <p className="text-gray-500 text-sm mb-2">Receba atualizações jurídicas exclusivas.</p>
                 <div className="flex gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="Seu e-mail" 
+                  <input
+                    type="email"
+                    placeholder="Seu e-mail"
                     className="flex-1 bg-white/5 border border-white/10 p-3 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"
                   />
                   <button className="bg-white/10 text-white py-3 px-6 hover:bg-gold-600 hover:text-charcoal-dark transition-colors uppercase text-xs tracking-widest font-semibold">
@@ -623,7 +621,7 @@ const App = () => {
       >
         <div className="absolute inset-0 rounded-full border border-white/20 group-hover:border-white/40 transition-colors"></div>
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
       </a>
     </div>
