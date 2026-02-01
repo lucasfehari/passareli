@@ -309,8 +309,8 @@ const App = () => {
                 className="about-image w-full h-auto object-cover grayscale"
               />
               <div className="absolute bottom-8 left-8 z-20 bg-charcoal/90 backdrop-blur-md p-6 border-l-4 border-gold-500">
-                <p className="text-gold-400 font-serif text-2xl mb-1">Fundado em 2005</p>
-                <p className="text-gray-400 text-xs tracking-widest uppercase">São Paulo, Brasil</p>
+                <p className="text-gold-400 font-serif text-2xl mb-1">Fundado em 10/11/2005</p>
+                <p className="text-gray-400 text-xs tracking-widest uppercase">Campo Grande, MS</p>
               </div>
             </div>
 
@@ -500,7 +500,7 @@ const App = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-serif text-lg">Telefone</h4>
-                    <p className="text-gray-400 mt-1">+55 (11) 99999-9999</p>
+                    <p className="text-gray-400 mt-1">+55 (67) 3316-9700</p>
                     <p className="text-gray-500 text-sm">Seg - Sex, 9h às 18h</p>
                   </div>
                 </div>
@@ -511,7 +511,7 @@ const App = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-serif text-lg">E-mail</h4>
-                    <p className="text-gray-400 mt-1">contato@passarelli.adv.br</p>
+                    <p className="text-gray-400 mt-1">passareli@passarelli.adv.br</p>
                   </div>
                 </div>
 
@@ -521,8 +521,7 @@ const App = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-serif text-lg">Localização</h4>
-                    <p className="text-gray-400 mt-1">Av. Paulista, 1000 - Bela Vista</p>
-                    <p className="text-gray-400">São Paulo, SP</p>
+                    <p className="text-gray-400 mt-1">R. Gen. Odorico Quadros, 285 - Jardim dos Estados, Campo Grande - MS 79020-260</p>
                   </div>
                 </div>
               </div>
@@ -615,7 +614,7 @@ const App = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/5511999999999"
+        href="https://wa.me/556733169700"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[40] p-4 bg-[#25D366] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 transition-all duration-300 flex items-center justify-center group"
