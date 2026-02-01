@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Scale, Gavel, Shield, Briefcase, Users, FileText, ArrowRight, Menu, X, ChevronRight, Phone, Mail, MapPin, CheckCircle, Instagram, Linkedin, Facebook, Clock, Quote } from 'lucide-react';
+import heroBg from './src/images/02.jpg';
+import aboutImg from './src/images/01.png';
 
 // Declaration for GSAP usage since we are loading it via script tag
 declare global {
@@ -238,7 +240,7 @@ const App = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal-dark/90 via-charcoal-dark/60 to-charcoal-dark z-10"></div>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img
-            src="src/images/02.jpg"
+            src={heroBg}
             alt="Law Office Interior"
             className="w-full h-[120%] -mt-[10%] object-cover opacity-60 hero-bg"
           />
@@ -302,7 +304,7 @@ const App = () => {
             <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] overflow-hidden rounded-sm border border-white/10 group">
               <div className="absolute inset-0 bg-gold-500/10 z-10 mix-blend-overlay"></div>
               <img
-                src="/src/images/01.png"
+                src={aboutImg}
                 alt="Meeting Room"
                 className="about-image w-full h-auto object-cover grayscale"
               />
